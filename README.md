@@ -12,8 +12,8 @@ Hospedei a aplicação no GitHub Pages para facilitar o acesso => https://lucasc
 Redimensionando a pagina para resoluções mais quebradas 'e não utilizadas em dispositivos' pode ocorrer quebras de paragrafos e alguns bugzinhos. 
 Fiz isso para não sujar o codigo com media query desnesessarias, mas dependendo do projeto posso deixar 100% redondo!
 
-- Validação de estoque no input de quantidade de produtos.
+- Validação de estoque no input de quantidade do produto.
 
-- 100% FlexBox, 0% de float :D
+- 100% FlexBox, 0% float :D
 
 Woo!
