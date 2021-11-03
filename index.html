@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pense Avanti</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/min/main.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+
+    <script>
+        if (localStorage.hasOwnProperty("productLocalStorage") === false) {
+            localStorage.setItem('productLocalStorage', JSON.stringify({
+                "product": [{
+                    "id": "0",
+                    "quantity": 0
+                }]
+            }));
+        }
+    </script>
+</head>
+
+<body>
+    <div class="menu-overlay"></div>
+
+    <header>
+        <div class="container">
+
+            <div id="fixed-top">
+                <section class="header-top">
+
+                    <div class="hamburguer-btn">
+                        <div class="btn">
+                            <div class="btn-left"></div>
+                            <div class="btn-right"></div>
+                        </div>
+                    </div>
+
+                    <div class="logo">
+                        <a href="/" title="Avanti" alt="Avanti">
+                            <h1>Avanti</h1>
+                        </a>
+                    </div>
+
+                    <div class="search">
+                        <input type="text" placeholder="O que procura?">
+                        <input type="button" value="OK">
+                    </div>
+
+                    <a href="/">
+                        <div class="cart">
+                            <div class="amount-items">0</div>
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                    </a>
+
+                </section>
+            </div>
+
+            <section class="header-menu">
+                <div class="side-menu-wrapper">
+                    <nav>
+                        <div class="menu-close">FECHAR [X]</div>
+                        <ul>
+                            <a href="#">
+                                <li>Menu 1</li>
+                            </a>
+                            <a href="#">
+                                <li>Menu 2</li>
+                            </a>
+                            <a href="#">
+                                <li>Menu 3</li>
+                            </a>
+                            <a href="#">
+                                <li>Menu 4</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="main-banner">
+            <a href="/"><img src="assets/img/banner-1.png"></a>
+        </section>
+
+        <section class="main-title promocaododia">
+            PROMOÇÃO DO DIA
+        </section>
+
+        <section class="promocao">
+            <div class="banner">
+                <a href="/"><img src="assets/img/banner-2.png"></a>
+            </div>
+
+            <div class="vitrine">
+                <div id="main-vitrine-promocao" class="slider-main-vitrine-promocao">
+                </div>
+            </div>
+        </section>
+
+        <section class="main-banner">
+            <a href="/"><img src="assets/img/banner-1.png"></a>
+        </section>
+
+        <section class="main-title osmaisvendidos">
+            OS MAIS VENDIDOS
+        </section>
+
+        <section class="main-vitrine">
+            <div id="main-vitrine" class="slider-main-vitrine">
+            </div>
+        </section>
+
+        <section class="main-description">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, expedita! Neque, saepe. Doloribus quam, dolores, nemo, quae alias deserunt cumque pariatur dolore adipisci ullam repudiandae voluptatibus sed fugit sapiente architecto! Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Voluptatibus, expedita! Neque, saepe. Doloribus quam, dolores, nemo, quae alias deserunt cumque pariatur dolore adipisci ullam repudiandae voluptatibus sed fugit sapiente architecto!
+        </section>
+    </main>
+
+    <footer>
+        <section class="sitemap">
+            <div class="categorias">
+                <div class="categoria-um">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                    </ul>
+                </div>
+                <div class="categoria-dois">
+                    <ul>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                        <li><a href="#">Categoria</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="institucional">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="#">Privacidade e Termos de Uso</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                    <li><a href="#">Política de Troca e Devolução</a></li>
+                    <li><a href="#">Política de Frete</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="faleconosco">
+                <h4>Fale conosco</h4>
+                <ul>
+                    <li><a href="mailto:atendimento@avanti.com.br">atendimento@avanti.com.br</a></li>
+                    <li><a href="#">(14)00000-0000</a></li>
+                    <li class="fan">
+                        <a href="#"><i class="fa fa-facebook-square"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin-square"></i></i></a>
+                        <a href="#"><i class="fa fa-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="info-store">
+            <div class="container-info-store">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus proin neque montes, eget. Porta et diam nunc in massa turpis ultricies. Nibh ullamcorper id tellus volutpat elementum morbi egestas nulla id. In in in leo sed mattis.
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+    <script src="assets/js/min/avanti-home-productlist.min.js"></script>
+    <script src="assets/js/min/avanti-home.min.js"></script>
+</body>
+
+</html>
