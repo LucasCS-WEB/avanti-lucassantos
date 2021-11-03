@@ -276,5 +276,5 @@ let Avanti_Home = {
 $(document).ready(function() {
     setTimeout(function() {
         Avanti_Home.mounted();
-    }, 2000);
+    }, 1000);
 });
