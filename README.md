@@ -13,6 +13,7 @@ Redimensionando a pagina para resoluções mais quebradas 'e não utilizadas em 
 Fiz isso para não sujar o codigo com media query desnesessarias, mas dependendo do projeto posso deixar 100% redondo!
 
 320px  =>  https://i.imgur.com/5sdkq2Z.jpg
+
 375px  =>  https://i.imgur.com/VvQXIC4.jpg
 425px  =>  https://i.imgur.com/U5RL0Kq.jpg
 768px  =>  https://i.imgur.com/ZXmxZoO.jpg
