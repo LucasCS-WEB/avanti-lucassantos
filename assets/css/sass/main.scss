@@ -19,7 +19,7 @@ body {
         .logo {
             width: 127px;
             height: 44px;
-            background: url(/assets/img/logo-avanti-com-slogan.png);
+            background: url(avanti-lucassantos/assets/img/logo-avanti-com-slogan.png);
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
@@ -71,7 +71,7 @@ body {
                 width: 127px;
                 height: 44px;
                 background: blue;
-                background: url(/assets/img/logo-avanti-com-slogan.png);
+                background: url(avanti-lucassantos/assets/img/logo-avanti-com-slogan.png);
                 background-repeat: no-repeat;
                 @include for-size(tablet) {
                     margin: 4px 0 0 66px;
