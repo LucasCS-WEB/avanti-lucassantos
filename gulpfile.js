@@ -9,7 +9,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
 const uglify = require('gulp-uglify');
 
-function custom_browsersync(done) {
+function task_browsersync(done) {
     browsersync.init({
         server: {
             baseDir: "./"
@@ -18,12 +18,12 @@ function custom_browsersync(done) {
     done();
 }
 
-function custom_browsersync_reload(done) {
+function task_browsersync_reload(done) {
     browsersync.reload();
     done();
 }
 
-function custom_sass() {
+function task_sass() {
     return src('assets/css/sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
@@ -34,7 +34,7 @@ function custom_sass() {
         .pipe(dest('assets/css/min'));
 }
 
-function custom_js() {
+function task_js() {
     return src('assets/js/*.js')
         .pipe(sourcemaps.init())
         .pipe(uglify())
@@ -43,15 +43,14 @@ function custom_js() {
         .pipe(dest('assets/js/min'));
 }
 
-function custom_watch() {
-    watch('*.html', custom_browsersync_reload);
-    watch('assets/css/sass/*.scss', series(custom_sass, custom_browsersync_reload));
-    watch('assets/js/*.js', series(custom_js, custom_browsersync_reload));
+function task_watch() {
+    watch('*.html', task_browsersync_reload);
+    watch(['assets/css/sass/*.scss', 'assets/js/*.js'], series(task_sass, task_js, task_browsersync_reload));
 }
 
 exports.default = series(
-    custom_browsersync,
-    custom_sass,
-    custom_js,
-    custom_watch
+    task_browsersync,
+    task_sass,
+    task_js,
+    task_watch
 );
