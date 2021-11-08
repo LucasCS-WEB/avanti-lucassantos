@@ -1,6 +1,13 @@
 # avanti-lucassantos
 avanti-challenge
 
+1º No diretório do projeto, execute `npm install`
+
+2º Se você instalou o Gulp globalmente, você pode executar `gulp default`
+
+
+
+
 - Hospedei a aplicação no GitHub Pages para facilitar o acesso => https://lucascs-web.github.io/avanti-lucassantos/index.html
 
 
