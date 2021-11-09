@@ -5,7 +5,7 @@ avanti-challenge
 
 2. Se você instalou o Gulp globalmente, você pode executar `gulp default`
 
-3. Após o `gulp default` abrira o webserver automaticamente no navegador, podendo alterar o sass e js, compilando automaticamente com livereload.
+3. Após o `gulp default` abrira o webserver automaticamente no navegador, podendo modificar o sass e js, compilando automaticamente com livereload.
 
 
 
