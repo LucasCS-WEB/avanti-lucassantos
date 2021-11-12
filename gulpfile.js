@@ -1,13 +1,13 @@
 'use strict';
 
-const { src, dest, watch, series } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const cssnano = require('gulp-cssnano');
-const sourcemaps = require('gulp-sourcemaps');
-const rename = require("gulp-rename");
-const uglify = require('gulp-uglify-es').default;
-const browsersync = require('browser-sync').create();
+const { src, dest, watch, series } = require('gulp'),
+    sass = require('gulp-sass')(require('sass')),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    sourcemaps = require('gulp-sourcemaps'),
+    rename = require("gulp-rename"),
+    uglify = require('gulp-uglify-es').default,
+    browsersync = require('browser-sync').create();
 
 // SASS //
 function task_sass() {
@@ -19,7 +19,7 @@ function task_sass() {
         .pipe(sourcemaps.write('./maps'))
         .pipe(rename({ suffix: ".min" }))
         .pipe(dest('assets/css/min'));
-}
+};
 
 // JAVASCRIPT //
 function task_js() {
@@ -29,7 +29,7 @@ function task_js() {
         .pipe(sourcemaps.write('./maps'))
         .pipe(rename({ suffix: ".min" }))
         .pipe(dest('assets/js/min'));
-}
+};
 
 // BROWSERSYNC //
 function task_browsersync(done) {
@@ -39,18 +39,18 @@ function task_browsersync(done) {
         }
     });
     done();
-}
+};
 
 function task_browsersync_reload(done) {
     browsersync.reload();
     done();
-}
+};
 
 // WATCH //
 function task_watch() {
     watch('*.html', task_browsersync_reload);
     watch(['assets/css/sass/*.scss', 'assets/js/*.js'], series(task_sass, task_js, task_browsersync_reload));
-}
+};
 
 // DEFAULT  //
 exports.default = series(
