@@ -6,9 +6,10 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 const browsersync = require('browser-sync').create();
 
+// SASS //
 function task_sass() {
     return src('assets/css/sass/*.scss')
         .pipe(sourcemaps.init())
@@ -20,6 +21,7 @@ function task_sass() {
         .pipe(dest('assets/css/min'));
 }
 
+// JAVASCRIPT //
 function task_js() {
     return src('assets/js/*.js')
         .pipe(sourcemaps.init())
@@ -29,11 +31,7 @@ function task_js() {
         .pipe(dest('assets/js/min'));
 }
 
-function task_watch() {
-    watch('*.html', task_browsersync_reload);
-    watch(['assets/css/sass/*.scss', 'assets/js/*.js'], series(task_sass, task_js, task_browsersync_reload));
-}
-
+// BROWSERSYNC //
 function task_browsersync(done) {
     browsersync.init({
         server: {
@@ -48,6 +46,13 @@ function task_browsersync_reload(done) {
     done();
 }
 
+// WATCH //
+function task_watch() {
+    watch('*.html', task_browsersync_reload);
+    watch(['assets/css/sass/*.scss', 'assets/js/*.js'], series(task_sass, task_js, task_browsersync_reload));
+}
+
+// DEFAULT  //
 exports.default = series(
     task_sass,
     task_js,

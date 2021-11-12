@@ -1,23 +1,28 @@
+// TYPOGRAPHY 1 - REGULAR 400 //
 @mixin typography-1 {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
 }
 
+// TYPOGRAPHY 2 - SEMI-BOLD 600 //
 @mixin typography-2 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
 }
 
+// TYPOGRAPHY 3 - BOLD 700 //
 @mixin typography-3 {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
 }
 
+// TYPOGRAPHY 4 - BOLD 700 //
 @mixin typography-4 {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
 }
 
+// TRANSITION - FAST //
 @mixin transition-1 {
     -webkit-transition: all 0.5s 0s ease;
     -moz-transition: all 0.5s 0s ease;
@@ -26,33 +31,45 @@
 }
 
 @mixin for-size($size) {
+    // MEDIA SMALL-MOBILE //
     @if $size==small-mobile {
         @media (max-width: 320px) {
             @content;
         }
     }
+    // MEDIA MEDIUM-MOBILE //
     @else if $size==medium-mobile {
         @media (max-width: 375px) {
             @content;
         }
     }
+    // MEDIA BIG-MOBILE //
     @else if $size==big-mobile {
         @media (max-width: 425px) {
             @content;
         }
     }
+    // MEDIA TABLET //
     @else if $size==tablet {
         @media (max-width: 768px) {
             @content;
         }
     }
+    // MEDIA DESKTOP //
     @else if $size==desktop {
         @media (max-width: 1024px) {
             @content;
         }
     }
+    // MEDIA BIG-DESKTOP //
     @else if $size==big-desktop {
         @media (max-width: 1440px) {
+            @content;
+        }
+    }
+    // MEDIA IF-DESKTOP //
+    @else if $size==if-desktop {
+        @media (min-width: 769px) {
             @content;
         }
     }

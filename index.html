@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Pense Avantia</title>
+    <meta name="description" content="Pense Avantia" />
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/min/main.min.css">
@@ -19,21 +21,25 @@
 </head>
 
 <body>
-
+    <!-- LOADING -->
     <div class="loading">
         <div class="logo">
             <i class="fa fa-spinner fa-spin"></i>
         </div>
     </div>
 
+    <!-- MENU OVERLAY MOBILE -->
     <div class="menu-overlay"></div>
 
+    <!-- HEADER -->
     <header>
         <div class="container">
 
+            <!-- FIXED MENU -->
             <div id="fixed-top">
                 <section class="header-top">
 
+                    <!-- HAMBURGUER MENU -->
                     <div class="hamburguer-btn">
                         <div class="btn">
                             <div class="btn-left"></div>
@@ -41,17 +47,20 @@
                         </div>
                     </div>
 
+                    <!-- LOGO -->
                     <div class="logo">
                         <a href="/" title="Avanti" alt="Avanti">
                             <h1>Avanti</h1>
                         </a>
                     </div>
 
+                    <!-- SEARCH -->
                     <div class="search">
                         <input type="text" placeholder="O que procura?">
                         <input type="button" value="OK">
                     </div>
 
+                    <!-- CART -->
                     <a href="/">
                         <div class="cart">
                             <div class="amount-items">0</div>
@@ -62,6 +71,7 @@
                 </section>
             </div>
 
+            <!-- NAV MENU -->
             <section class="header-menu">
                 <div class="side-menu-wrapper">
                     <nav>
@@ -87,15 +97,19 @@
         </div>
     </header>
 
+    <!-- MAIN -->
     <main class="container">
+        <!-- BANNER -->
         <section class="main-banner">
             <a href="/"><img src="assets/img/banner-1.png"></a>
         </section>
 
+        <!-- TITLE -->
         <section class="main-title promocaododia">
             PROMOÇÃO DO DIA
         </section>
 
+        <!-- MAIN VITRINE PROMOCAO -->
         <section class="promocao">
             <div class="banner">
                 <a href="/"><img src="assets/img/banner-2.png"></a>
@@ -107,26 +121,32 @@
             </div>
         </section>
 
+        <!-- BANNER -->
         <section class="main-banner">
             <a href="/"><img src="assets/img/banner-1.png"></a>
         </section>
 
+        <!-- TITLE -->
         <section class="main-title osmaisvendidos">
             OS MAIS VENDIDOS
         </section>
 
+        <!-- MAIN VITRINE -->
         <section class="main-vitrine">
             <div id="main-vitrine" class="slider-main-vitrine">
             </div>
         </section>
 
+        <!-- DESCRIPTION -->
         <section class="main-description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, expedita! Neque, saepe. Doloribus quam, dolores, nemo, quae alias deserunt cumque pariatur dolore adipisci ullam repudiandae voluptatibus sed fugit sapiente architecto! Lorem ipsum
             dolor, sit amet consectetur adipisicing elit. Voluptatibus, expedita! Neque, saepe. Doloribus quam, dolores, nemo, quae alias deserunt cumque pariatur dolore adipisci ullam repudiandae voluptatibus sed fugit sapiente architecto!
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
+        <!-- SITEMAP -->
         <section class="sitemap">
             <div class="categorias">
                 <div class="categoria-um">
@@ -174,6 +194,7 @@
             </div>
         </section>
 
+        <!-- INFO STORE -->
         <section class="info-store">
             <div class="container-info-store">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus proin neque montes, eget. Porta et diam nunc in massa turpis ultricies. Nibh ullamcorper id tellus volutpat elementum morbi egestas nulla id. In in in leo sed mattis.
@@ -182,6 +203,7 @@
     </footer>
 
     <script>
+        // START PRODUCTLOCALSTORAGE //
         if (localStorage.hasOwnProperty("productLocalStorage") === false) {
             localStorage.setItem('productLocalStorage', JSON.stringify({
                 "product": [{
