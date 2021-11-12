@@ -69,13 +69,16 @@ body {
         @include for-size(tablet) {
             padding-bottom: 40px;
         }
+        // 00 //
         .header-top {
             display: flex;
             justify-content: space-between;
             padding-top: 40px;
+            // 00 //
             @include for-size(tablet) {
                 height: 140px;
             }
+            // 00 //
             .logo {
                 width: 127px;
                 height: 44px;
@@ -93,6 +96,7 @@ body {
                     color: transparent;
                 }
             }
+            // 00 //
             .search {
                 width: 60%;
                 margin: 0 auto;
@@ -126,6 +130,7 @@ body {
                     cursor: pointer;
                 }
             }
+            // 00 //
             .cart {
                 position: relative;
                 width: 44px;
@@ -154,6 +159,7 @@ body {
                     margin-left: 10px;
                 }
             }
+            // 00 //
             .hamburguer-btn {
                 @include for-size(tablet) {
                     position: absolute;
@@ -267,6 +273,7 @@ body {
                 }
             }
         }
+        // 00 //
         @media (min-width: 769px) {
             .fixed-top {
                 position: fixed;
@@ -303,7 +310,9 @@ body {
                 }
             }
         }
+        // 00 //
         .header-menu {
+            // 00 //
             @include for-size(tablet) {
                 .side-menu-wrapper {
                     position: fixed;
@@ -339,11 +348,13 @@ body {
                     }
                 }
             }
+            // 00 //
             @media (min-width: 769px) {
                 .menu-close {
                     display: none;
                 }
             }
+            // 00 //
             nav {
                 ul {
                     display: flex;
@@ -367,6 +378,7 @@ body {
     }
     // MAIN //
     main {
+        // MAIN BANNER //
         .main-banner {
             img {
                 width: 100%;
@@ -376,6 +388,7 @@ body {
                 }
             }
         }
+        // MAIN TITLE //
         .main-title {
             display: flex;
             justify-content: center;
@@ -386,6 +399,7 @@ body {
             font-size: 1.875em;
             letter-spacing: 9.6px;
         }
+        // 00 //
         @media (min-width: 769px) {
             .parkinson-keyframes {
                 animation: parkinson-keyframes 0.1s;
@@ -409,6 +423,7 @@ body {
                 }
             }
         }
+        // 00 //
         .main-description {
             display: flex;
             align-items: center;
@@ -425,6 +440,7 @@ body {
                 padding: 60px 0 60px 0;
             }
         }
+        // 00 //
         .promocao {
             display: flex;
             padding-bottom: 80px;
@@ -475,6 +491,7 @@ body {
                 }
             }
         }
+        // 00 //
         .main-vitrine {
             .slick-slider {
                 width: calc(100% - 40px) !important;
@@ -494,6 +511,7 @@ body {
                 }
             }
         }
+        // 00 //
         .product {
             position: relative;
             margin: 0 5px 0 5px;
@@ -605,6 +623,7 @@ body {
                 }
             }
         }
+        // 00 //
         .slick-next:before,
         .slick-prev:before {
             color: #4f4f4f !important;
@@ -612,24 +631,31 @@ body {
     }
     // FOOTER //
     footer {
+        // 00 //
         border-top: 2px solid #f8f8f8;
+        // 00 //
         @include for-size(tablet) {
             font-size: 12px;
         }
+        // 00 //
         @include for-size(big-mobile) {
             font-size: 16px;
         }
+        // SITEMAP //
         .sitemap {
             display: flex;
             width: 1100px;
             margin: 0 auto;
             padding: 60px 0 60px 0;
+            // 00 //
             @include for-size(big-desktop) {
                 width: 80%;
             }
+            // 00 //
             @include for-size(tablet) {
                 width: 90%;
             }
+            // 00 //
             @include for-size(big-mobile) {
                 flex-direction: column;
                 align-items: center;
@@ -727,6 +753,7 @@ body {
                 }
             }
         }
+        // INFO STORE //
         .info-store {
             background: #f8f8f8;
             .container-info-store {
