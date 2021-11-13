@@ -8,6 +8,7 @@ $(document).ready(function() {
             // ADD MORE ITEMS CART + VALIDATE AVAILABLE //
             addMoreItemsCartAndValidateAvailable: function() {
                 $(".quantity-more").click(function() {
+
                     let quantity = $(this).siblings(".quantity").val();
                     quantity++;
                     $(this).siblings(".quantity").val(quantity);
@@ -23,28 +24,32 @@ $(document).ready(function() {
                                         .children(".quantity")
                                         .val(value.available);
                                     alert("Apenas " + value.available + " disponível");
-                                }
-                            }
+                                };
+                            };
                         });
                     });
+
                 });
             },
 
             // ADD LESS ITEMS CART //
             addLessItemsCart: function() {
                 $(".quantity-less").click(function() {
+
                     let quantity = $(this).siblings(".quantity").val();
 
                     if (quantity >= 1) {
                         quantity--;
                         $(this).siblings(".quantity").val(quantity);
                     }
+
                 });
             },
 
             // ADD ITEMS KEY CART + VALIDATE AVAILABLE //
             addItemsKeyCartAndValidatesAvailable: function() {
                 $(".quantity").keyup(function() {
+
                     let quantity = $(this).val();
 
                     let idProduct = $(this).parent().parent().attr("data-idproduct");
@@ -62,14 +67,15 @@ $(document).ready(function() {
                             }
                         });
                     });
+
                 });
             },
 
-            // ADD ITEMS KEY CART + VALIDATE AVAILABLE //
+            // ADD/UPDATE ITEM CART LOCALSTORAGE + VALIDATE AVAILABLE //
             addAndUpdateItemsCartProductLocalStorage: function() {
                 $(".buy-button").click(function() {
-                    buyButtonText = $(this).text();
 
+                    let buyButtonText = $(this).text();
                     let idProduct = $(this).parent().attr("data-idproduct");
 
                     let quantity = parseInt(
@@ -81,13 +87,14 @@ $(document).ready(function() {
 
                     if ((quantity === 0) & (buyButtonText === "ADICIONAR")) {
                         alert("Selecione a quantidade de Itens");
-                    }
+                    };
 
                     if ((quantity > 0) & (buyButtonText === "ADICIONAR")) {
                         alert("Carrinho Atualizado");
-                    }
+                    };
 
                     if (localStorage.hasOwnProperty("productLocalStorage") === true) {
+
                         let objectIndexProductLocalStorage = JSON.parse(
                             localStorage.getItem("productLocalStorage")
                         ).product.findIndex((object) => object.id === idProduct);
@@ -130,14 +137,17 @@ $(document).ready(function() {
                                 JSON.stringify(getItemProductLocalStorage)
                             );
                         }
-                    }
+                    };
+
                 });
             },
 
             // ADD / UPDATE ITEMS PRODUCT CART LOCALSTORAGE //
             amountItemsCartProductLocalStorage: function() {
                 $(".amount-items").text(
-                    JSON.parse(localStorage.getItem("productLocalStorage")).product.reduce(
+                    JSON.parse(
+                        localStorage.getItem("productLocalStorage")
+                    ).product.reduce(
                         (sum, value) => sum + value.quantity,
                         0
                     )
@@ -154,6 +164,7 @@ $(document).ready(function() {
 
             // PLUGIN SLICKSLIDER MAIN //
             slickSlider: function() {
+                // SLICK - HOME VITRINE PROMOCAO //
                 $(".slider-main-vitrine-promocao").slick({
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -167,6 +178,7 @@ $(document).ready(function() {
                     }, ],
                 });
 
+                // SLICK - HOME VITRINE //
                 $(".slider-main-vitrine").slick({
                     slidesToShow: 4,
                     slidesToScroll: 1,
@@ -191,26 +203,31 @@ $(document).ready(function() {
 
             // MENU MOBILE //
             menuMobile: function() {
-                let slide_wrp = ".side-menu-wrapper";
-                let open_button = ".hamburguer-btn";
-                let close_button = ".menu-close";
-                let overlay = ".menu-overlay";
 
+                let slide_wrp = ".side-menu-wrapper",
+                    open_button = ".hamburguer-btn",
+                    close_button = ".menu-close",
+                    overlay = ".menu-overlay";
+
+                // EFFECT BUTTON-HAMBURGUER ACTIVE //
                 $(open_button).click(function(e) {
                     e.preventDefault();
                     $(".btn").addClass("active");
                 });
 
+                // EFFECT NAV-MOBILE //
                 $(slide_wrp)
                     .hide()
                     .css({
-                        right: -$(slide_wrp).outerWidth() + "px",
+                        right: -$(slide_wrp)
+                            .outerWidth() + "px",
                     })
                     .delay(50)
                     .queue(function() {
                         $(slide_wrp).show();
                     });
 
+                // BUTTON OPEN NAV-MOBILE //
                 $(open_button).click(function(e) {
                     e.preventDefault();
                     $(slide_wrp).css({
@@ -225,6 +242,7 @@ $(document).ready(function() {
                     });
                 });
 
+                // BUTTON CLOSE NAV-MOBILE //
                 $(close_button).click(function(e) {
                     e.preventDefault();
                     $(".btn").removeClass("active");
@@ -240,42 +258,53 @@ $(document).ready(function() {
                     });
                 });
 
+                // CLOSE NAV-MOBILE CLICK-DOCUMENT  //
                 $(document).on("click", function(e) {
                     if (!e.target.closest(slide_wrp) && $(slide_wrp).hasClass("active")) {
+
                         $(".btn").removeClass("active");
+
                         $(slide_wrp)
                             .css({
                                 right: -$(slide_wrp).outerWidth() + "px",
                             })
                             .removeClass("active");
+
                         $(overlay).css({
                             opacity: "0",
                             width: "0",
                         });
+
                     }
                 });
+
             },
 
             // SCROLL MAIN //
             scroll: function() {
                 $(window).scroll(function() {
-                    if (
-                        $(window).scrollTop() > $(".main-banner:nth-child(1n)").position().top
-                    ) {
+
+                    // FIXED TOP HEADER -  IF DESKTOP //
+                    if ($(window).scrollTop() > $(".main-banner:nth-child(1n)").position().top) {
                         $("#fixed-top").addClass("fixed-top fixed-top-keyframes");
                     } else {
                         $("#fixed-top").removeClass("fixed-top fixed-top-keyframes");
-                    }
+                    };
+
+                    // TITLE - PROMOCAO DIA //
                     if ($(window).scrollTop() > 0) {
                         $(".promocaododia").addClass("parkinson-keyframes");
                     } else {
                         $(".promocaododia").removeClass("parkinson-keyframes");
-                    }
+                    };
+
+                    // TITLE - MAIS VENDIDOS //
                     if ($(window).scrollTop() > 800) {
                         $(".osmaisvendidos").addClass("parkinson-keyframes");
                     } else {
                         $(".osmaisvendidos").removeClass("parkinson-keyframes");
-                    }
+                    };
+
                 });
             },
 
@@ -302,11 +331,11 @@ $(document).ready(function() {
 
         mounted: function() {
             return this.methods.init();
-        },
+        }
     };
 
     setTimeout(() => {
         Avanti_Home.mounted();
-    }, 4000);
+    }, 400);
 
 });
