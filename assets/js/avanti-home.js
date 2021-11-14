@@ -5,7 +5,7 @@ $(document).ready(function() {
         // CREATE FUNCTIONS //
         //////////////////////
         methods: {
-            // ADD MORE ITEMS IN THE CART AND CHECK AVAILABILITY //
+            // ADD MORE ITEMS IN CART/LOCALSTORAGE AND CHECK AVAILABILITY //
             addMoreItemsCartAndValidateAvailable: function() {
                 $(".quantity-more").click(function() {
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
                 });
             },
 
-            // AMOUNT OF ITEMS AND CHECK AVAILABILITY  //
+            // INPUT AMOUNT OF ITEMS IN CART/LOCALSTORAGE AND CHECK AVAILABILITY //
             addItemsKeyCartAndValidatesAvailable: function() {
                 $(".quantity").keyup(function() {
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
                 });
             },
 
-            // ADD/UPDATE ITEMS IN CART AND LOCALSTORAGE AND CHECK AVAILABILITY //
+            // UPDATE ITEMS IN CART/LOCALSTORAGE //
             addAndUpdateItemsCartProductLocalStorage: function() {
                 $(".buy-button").click(function() {
 
@@ -273,7 +273,7 @@ $(document).ready(function() {
 
                 });
 
-                // CLOSE NAV-MOBILE CLICK-DOCUMENT  //
+                // CLOSE NAV-MOBILE CLICKING ON THE BODY //
                 $(document).on("click", function(e) {
                     if (!e.target.closest(slide_wrp) && $(slide_wrp).hasClass("active")) {
 
