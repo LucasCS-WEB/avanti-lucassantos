@@ -2,24 +2,24 @@
 
     $.getJSON("api/product.json", function(productDate) {
 
-        // RESULT MAIN VITRINE OFFER //
+        // INIT MAIN VITRINE OFFER //
         let mainVitrineDayOfferHTML = "";
-        // RESULT MAIN VITRINE //
+        // INIT MAIN VITRINE //
         let mainVitrineHTML = "";
 
         $.each(productDate[0].items, function(i, value) {
 
-            let getItemQuantityLocalStorage = JSON.parse(localStorage.getItem('productLocalStorage')).product;
-            let quantityLocalStorage = getItemQuantityLocalStorage.filter(x => x.id === value.id).map(x => x.quantity);
-            let initLocalStorage = quantityLocalStorage >= 1;
+            let getItemQuantityLocalStorage = JSON.parse(localStorage.getItem('productLocalStorage')).product,
+                quantityLocalStorage = getItemQuantityLocalStorage.filter(x => x.id === value.id).map(x => x.quantity),
+                initLocalStorage = quantityLocalStorage >= 1,
 
-            let unavailable = value.available === 0;
-            let unavailableHide = unavailable ? "display:none;" : "display:block;";
-            let unavailableBuyButtonText = unavailable ? "INDISPONÍVEL" : "ADICIONAR";
-            let unavailableBuyButtonColor = unavailable ? "background:#3E4742;" : "background:#008939;"
+                unavailable = value.available === 0,
+                unavailableHide = unavailable ? "display:none;" : "display:block;",
+                unavailableBuyButtonText = unavailable ? "INDISPONÍVEL" : "ADICIONAR",
+                unavailableBuyButtonColor = unavailable ? "background:#3E4742;" : "background:#008939;",
 
-            var sellingPrice = value.sellingPrice.toString().replace(".", ",");
-            var bestPrice = value.bestPrice.toString().replace(".", ",");
+                sellingPrice = value.sellingPrice.toString().replace(".", ","),
+                bestPrice = value.bestPrice.toString().replace(".", ",");
 
             innerHTML =
                 "<div class=\"product\" data-idproduct=" + value.id + ">" +
@@ -47,13 +47,13 @@
 
                 "</div>";
 
-            // RESULT MAIN VITRINE OFFER //
+            // SET MAIN VITRINE OFFER //
             if (value.dayOffer === true) {
-                mainVitrineDayOfferHTML += innerHTML
+                mainVitrineDayOfferHTML += innerHTML;
             }
-            // RESULT MAIN VITRINE //
+            // SET MAIN VITRINE //
             else {
-                mainVitrineHTML += innerHTML
+                mainVitrineHTML += innerHTML;
             }
 
         });
