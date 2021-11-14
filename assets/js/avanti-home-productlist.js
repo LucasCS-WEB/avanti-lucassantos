@@ -2,7 +2,9 @@
 
     $.getJSON("api/product.json", function(productDate) {
 
+        // RESULT MAIN VITRINE OFFER //
         let mainVitrineDayOfferHTML = "";
+        // RESULT MAIN VITRINE //
         let mainVitrineHTML = "";
 
         $.each(productDate[0].items, function(i, value) {
@@ -45,15 +47,20 @@
 
                 "</div>";
 
+            // RESULT MAIN VITRINE OFFER //
             if (value.dayOffer === true) {
                 mainVitrineDayOfferHTML += innerHTML
-            } else {
+            }
+            // RESULT MAIN VITRINE //
+            else {
                 mainVitrineHTML += innerHTML
             }
 
         });
 
+        // RESULT MAIN VITRINE OFFER //
         $("#main-vitrine-promocao").html(mainVitrineDayOfferHTML);
+        // RESULT MAIN VITRINE //
         $("#main-vitrine").html(mainVitrineHTML);
 
     });
