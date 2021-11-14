@@ -5,7 +5,7 @@ $(document).ready(function() {
         // CREATE FUNCTIONS //
         //////////////////////
         methods: {
-            // ADD MORE ITEMS CART + VALIDATE AVAILABLE //
+            // ADD MORE ITEMS IN THE CART AND CHECK AVAILABILITY //
             addMoreItemsCartAndValidateAvailable: function() {
                 $(".quantity-more").click(function() {
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
                 });
             },
 
-            // ADD LESS ITEMS CART //
+            // ADD LESS ITEMS IN CART //
             addLessItemsCart: function() {
                 $(".quantity-less").click(function() {
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
                 });
             },
 
-            // ADD ITEMS KEY CART + VALIDATE AVAILABLE //
+            // AMOUNT OF ITEMS AND CHECK AVAILABILITY  //
             addItemsKeyCartAndValidatesAvailable: function() {
                 $(".quantity").keyup(function() {
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
                 });
             },
 
-            // ADD/UPDATE ITEM CART LOCALSTORAGE + VALIDATE AVAILABLE //
+            // ADD/UPDATE ITEMS IN CART AND LOCALSTORAGE AND CHECK AVAILABILITY //
             addAndUpdateItemsCartProductLocalStorage: function() {
                 $(".buy-button").click(function() {
 
@@ -136,13 +136,14 @@ $(document).ready(function() {
                                 "productLocalStorage",
                                 JSON.stringify(getItemProductLocalStorage)
                             );
+
                         }
                     };
 
                 });
             },
 
-            // ADD / UPDATE ITEMS PRODUCT CART LOCALSTORAGE //
+            // AMOUNT OF CART ITEMS - HEADER //
             amountItemsCartProductLocalStorage: function() {
                 $(".amount-items").text(
                     JSON.parse(
@@ -201,7 +202,7 @@ $(document).ready(function() {
                 });
             },
 
-            // MENU MOBILE //
+            // NAV MOBILE //
             menuMobile: function() {
 
                 let slide_wrp = ".side-menu-wrapper",
@@ -211,8 +212,11 @@ $(document).ready(function() {
 
                 // EFFECT BUTTON-HAMBURGUER ACTIVE //
                 $(open_button).click(function(e) {
+
                     e.preventDefault();
+
                     $(".btn").addClass("active");
+
                 });
 
                 // EFFECT NAV-MOBILE //
@@ -229,33 +233,44 @@ $(document).ready(function() {
 
                 // BUTTON OPEN NAV-MOBILE //
                 $(open_button).click(function(e) {
+
                     e.preventDefault();
+
                     $(slide_wrp).css({
                         right: "0px",
                     });
+
                     setTimeout(function() {
                         $(slide_wrp).addClass("active");
                     }, 50);
+
                     $(overlay).css({
                         opacity: "1",
                         width: "100%",
                     });
+
                 });
 
                 // BUTTON CLOSE NAV-MOBILE //
                 $(close_button).click(function(e) {
+
                     e.preventDefault();
+
                     $(".btn").removeClass("active");
+
                     $(slide_wrp).css({
                         right: -$(slide_wrp).outerWidth() + "px",
                     });
+
                     setTimeout(function() {
                         $(slide_wrp).removeClass("active");
                     }, 50);
+
                     $(overlay).css({
                         opacity: "0",
                         width: "0",
                     });
+
                 });
 
                 // CLOSE NAV-MOBILE CLICK-DOCUMENT  //
